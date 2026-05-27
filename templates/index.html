@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+      <link rel="stylesheet" href="/static/style.css">
+    <title>RECEITA DE COMIDAS</title>
+</head>
+<body>
+
+    <h2>NOME DO SITE</h2>
+
+    <div class="barra-pesquisa">
+        <form method="POST" action="/">
+            <input type="text" name="ingrediente_unico" placeholder="Digite um ingrediente..." required />
+            <input type="submit" value="Pesquisar" />
+        </form>
+    </div>
+
+    <div>
+        <img src="static/imagem/img(1).jpg">
+        <img src="static/imagem/img(2).jpg">
+        <img src="static/imagem/img(3).jpg">
+        <img src="static/imagem/img(4).jpg">
+    
+    </div>
+
+    <h3>Resultado do Agente:</h3>
+
+    {% if receitas %}
+        <ul>
+            {% for receita in receitas %}
+                <li style="margin-bottom: 15px;">
+                    <strong>Comida:</strong> {{ receita.nome }} 
+                    
+                    {% if receita.status == 'Saudável' %}
+                        <span style="color: green; font-weight: bold;">(✓ Saudavel)</span>
+                    {% else %}
+                        <span style="color: red; font-weight: bold;">(✕ Nao Saudavel)</span>
+                    {% endif %}
+                    <br>
+                    <strong>Como fazer:</strong> {{ receita.descricao }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% elif request.method == 'POST' %}
+        <p>Nenhuma receita encontrada com esse ingrediente.</p>
+        
+    {% endif %}
+
+</body>
+</html>

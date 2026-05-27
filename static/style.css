@@ -1,0 +1,39 @@
+body{
+       text-align: center;
+}
+
+head{
+    text-align: center;
+}
+
+li{
+    font-size: 17px;
+    margin: 20px;
+}
+
+p{
+    font-size: 20px;
+}
+
+input{
+    font-size: 17px;
+
+}
+
+img {
+    width: 200px; 
+    height: 150px;
+    border-radius: 8px; 
+}
+
+h2{
+     font-size: 40px; 
+}
+
+h3{
+     font-size: 30px; 
+}
+
+.barra-pesquisa {
+    margin-bottom: 35px; 
+}
